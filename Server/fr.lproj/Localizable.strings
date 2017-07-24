@@ -1,0 +1,13 @@
+/* 
+  Localizeable.Strings
+  Control Room Server
+
+  Created by Aaron Vizzini on 18/07/2017.
+  Copyright © 2017 Aaron Vizzini. All rights reserved.
+*/
+
+"ON" = "Démarré";
+"OFF" = "Éteinte";
+"None" = "Aucune";
+"Start Server" = "Démarrez le Serveur";
+"Stop Server" = "Éteignez le Serveur";

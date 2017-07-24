@@ -1,0 +1,30 @@
+
+/* Class = "NSButtonCell"; title = "Start Server"; ObjectID = "65B-Xn-3Pk"; */
+"65B-Xn-3Pk.title" = "Démarrez le Serveur";
+
+/* Class = "NSTextFieldCell"; title = "Lightroom Status:"; ObjectID = "APj-Me-9nQ"; */
+"APj-Me-9nQ.title" = "l'État de Lightroom:";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "EzA-cj-fT7"; */
+"EzA-cj-fT7.title" = "Aucune";
+
+/* Class = "NSTextFieldCell"; title = "OFF"; ObjectID = "GOU-6I-9dx"; */
+"GOU-6I-9dx.title" = "Éteinte";
+
+/* Class = "NSTextFieldCell"; title = "App Connected:"; ObjectID = "LLF-ON-kck"; */
+"LLF-ON-kck.title" = "l'Appli Connectée:";
+
+/* Class = "NSTextFieldCell"; title = "Control Room Server"; ObjectID = "YA5-zK-tIX"; */
+"YA5-zK-tIX.title" = "Control Room Server";
+
+/* Class = "NSTextFieldCell"; title = "OFF"; ObjectID = "ad8-WJ-Jdj"; */
+"ad8-WJ-Jdj.title" = "Éteinte";
+
+/* Class = "NSButtonCell"; title = "Quit"; ObjectID = "jgB-ti-cWh"; */
+"jgB-ti-cWh.title" = "Quitter";
+
+/* Class = "NSTextFieldCell"; title = "Server Running On:"; ObjectID = "jtP-mZ-QbW"; */
+"jtP-mZ-QbW.title" = "l'Addresse IP du serveur:";
+
+/* Class = "NSTextFieldCell"; title = "Server Status:"; ObjectID = "raF-41-ALY"; */
+"raF-41-ALY.title" = "l'État du serveur:";
