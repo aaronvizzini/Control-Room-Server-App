@@ -13,7 +13,7 @@ enum ValueType: String {
     case starRating = "starRating"
     case bwColor = "bwColor"
     
-    //Adjust-Basic Panel
+    //Adjust-Basic Panel 
     case Temperature = "Temperature"
     case Tint = "Tint"
     case Exposure = "Exposure"
