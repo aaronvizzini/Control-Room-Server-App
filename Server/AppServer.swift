@@ -119,8 +119,13 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 print("App server did read: \(msg)")
                 
                 if(parts[0] == "CMD"){
-                    let commandEnum = Command(rawValue: parts[1])!
-                    KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: commandEnum)
+                    let cmd = Command(rawValue: parts[1])!
+                    
+                    if (cmd != Command.library && cmd != Command.develop) {
+                        KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
+                    } else {
+                        ClientServerManager.sharedInstance.pluginWriteClient.send(command: cmd)
+                    }
                 } else if(parts[0] == "ValueType") {
                     parts = parts[1].characters.split{$0 == ","}.map(String.init)
 

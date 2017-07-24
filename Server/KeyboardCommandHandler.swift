@@ -51,7 +51,9 @@ class KeyboardCommandHandler: NSObject {
         case .flagDelete:
             vKey = 0x07
         case .unflag:
-            vKey = 0x20            
+            vKey = 0x20
+        default:
+            return
         }
         
         let src = CGEventSource(stateID: CGEventSourceStateID.hidSystemState)
