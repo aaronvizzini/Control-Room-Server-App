@@ -9,11 +9,16 @@
 import Foundation
 import CocoaAsyncSocket
 
+protocol PluginReadClientDelegate: class {
+    func readClientDidConnect()
+    func readClientDidDisconnect()
+}
+
 
 /// The PluginReadClient handles reading data that is sent by the LR plugin. It can only read data as the LR Plugin requires seperate ports for sending and receiving data. Data the is read in from the plugin is sent to the iOS app via the AppServer.
 class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
     private var mSocket: GCDAsyncSocket?
-    
+    weak var delegate: PluginReadClientDelegate?
     
     /// Called to connect the socket to the plugin
     func connectSocket() {
@@ -54,6 +59,7 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
         mSocket = socket
         socket.readData(to: GCDAsyncSocket.crlfData(), withTimeout: -1, tag: 0)
         print("Plugin Read Client did connect")
+        self.delegate?.readClientDidConnect()
     }
     
     /// Called when data has been written to the socket. Goes unused as writing to the LR plugin can only occur via the PluginWriteClient
@@ -102,6 +108,7 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
     ///   - err: the possible error relating to this disconnection
     func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
         print("Plugin Read Client did disconnect")
+        self.delegate?.readClientDidDisconnect()
     }
     
     

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ServerViewController: NSViewController, AppServerDelegate{
+class ServerViewController: NSViewController, AppServerDelegate, PluginReadClientDelegate, PluginWriteClientDelegate {
 
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var ipLabel: NSTextField!
@@ -16,9 +16,14 @@ class ServerViewController: NSViewController, AppServerDelegate{
     @IBOutlet weak var lightroomStatusLabel: NSTextField!
     @IBOutlet weak var startStopButton: NSButton!
     
+    private var pluginReadClientConnected = false
+    private var pluginWriteClientConnected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ClientServerManager.sharedInstance.appServer.delegate = self
+        ClientServerManager.sharedInstance.pluginWriteClient.delegate = self
+        ClientServerManager.sharedInstance.pluginReadClient.delegate = self
     }
     
     @IBAction func quitServerApp(_ sender: AnyObject) {
@@ -93,5 +98,40 @@ class ServerViewController: NSViewController, AppServerDelegate{
     /// App server delegate method called when the socket did disconnect. Updates the UI accordingly.
     func serverSocketDidDisconnect() {
         self.appConnectedLabel.stringValue = NSLocalizedString("None", comment: "")
+    }
+    
+    /// Write client delegate method called when the client connects with the LR plugin
+    func writeClientDidConnect() {
+        pluginWriteClientConnected = true
+
+        if(pluginWriteClientConnected && pluginWriteClientConnected) {
+            self.lightroomStatusLabel.stringValue = NSLocalizedString("ON", comment: "")
+        } else {
+            self.lightroomStatusLabel.stringValue = NSLocalizedString("OFF", comment: "")
+        }
+    }
+    
+    /// Write client delegate method called when the client disconnects with the LR plugin
+    func writeClientDidDisconnect() {
+        self.lightroomStatusLabel.stringValue = NSLocalizedString("OFF", comment: "")
+        pluginWriteClientConnected = false
+    }
+    
+    /// Read client delegate method called when the client connects with the LR plugin
+    func readClientDidConnect() {
+        pluginReadClientConnected = true
+
+        if(pluginReadClientConnected && pluginReadClientConnected) {
+            self.lightroomStatusLabel.stringValue = NSLocalizedString("ON", comment: "")
+            print("readClientDidConnect")
+        } else {
+            self.lightroomStatusLabel.stringValue = NSLocalizedString("OFF", comment: "")
+        }
+    }
+    
+    /// Read client delegate method called when the client disconnects with the LR plugin
+    func readClientDidDisconnect() {
+        self.lightroomStatusLabel.stringValue = NSLocalizedString("OFF", comment: "")
+        pluginReadClientConnected = false
     }
 }

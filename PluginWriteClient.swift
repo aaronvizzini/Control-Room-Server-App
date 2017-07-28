@@ -9,11 +9,15 @@
 import Foundation
 import CocoaAsyncSocket
 
+protocol PluginWriteClientDelegate: class {
+    func writeClientDidConnect()
+    func writeClientDidDisconnect()
+}
 
 /// The PluginWriteClient handles sending data to the LR Plugin. It can only send data as the LR Plugin requires seperate ports for sending and receiving data. The PluginWriteClient is used by the AppServer when the iOS app wishes to send data to the plugin.
 class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
     private var mSocket: GCDAsyncSocket?
-    
+    weak var delegate: PluginWriteClientDelegate?
     
     /// Connect the socket, making a connection to the LR plugin for writing.
     func connectSocket() {
@@ -57,6 +61,7 @@ class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
     func socket(_ socket : GCDAsyncSocket, didConnectToHost host:String, port p:UInt16) {
         mSocket = socket
         print("Plugin Write Client did connect")
+        self.delegate?.writeClientDidConnect()
     }
     
     
@@ -93,6 +98,7 @@ class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
     ///   - err: the possible error relating to this disconnection
     func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
         print("Plugin Write Client did disconnect")
+        self.delegate?.writeClientDidDisconnect()
     }
     
     /// Sends a command message from the server to the  LRplugin in the correctly formatted fashion
