@@ -42,6 +42,12 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 return
             }
             
+            listenSocket.perform({
+                var on: UInt32 = 1;
+                if setsockopt(self.listenSocket.socketFD(), SOL_SOCKET, TCP_NODELAY, &on, socklen_t(MemoryLayout.size(ofValue: on))) == -1 { }
+                
+            })
+            
             self.delegate?.serverDidFinishStarting()
             isRunning = true
         }
@@ -118,18 +124,20 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 
                 print("App server did read: \(msg)")
                 
-                if(parts[0] == "CMD"){
-                    let cmd = Command(rawValue: parts[1])!
+                if(parts.count >= 2) {
+                    if(parts[0] == "CMD"){
+                        let cmd = Command(rawValue: parts[1])!
                     
-                    if (cmd != Command.library && cmd != Command.develop) {
-                        KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
-                    } else {
-                        ClientServerManager.sharedInstance.pluginWriteClient.send(command: cmd)
+                        if (cmd != Command.library && cmd != Command.develop && cmd != Command.connected) {
+                            KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
+                        } else {
+                            ClientServerManager.sharedInstance.pluginWriteClient.send(command: cmd)
+                        }
+                    } else if(parts[0] == "ValueType") {
+                        parts = parts[1].characters.split{$0 == ","}.map(String.init)
+                        
+                        ClientServerManager.sharedInstance.pluginWriteClient.send(value: parts[1], forValueType: parts[0])
                     }
-                } else if(parts[0] == "ValueType") {
-                    parts = parts[1].characters.split{$0 == ","}.map(String.init)
-
-                    ClientServerManager.sharedInstance.pluginWriteClient.send(value: parts[1], forValueType: parts[0])
                 }
                 
                 sock.readData(to: GCDAsyncSocket.crlfData(), withTimeout: -1, tag: 0)

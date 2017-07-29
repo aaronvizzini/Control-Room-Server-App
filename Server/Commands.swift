@@ -25,4 +25,5 @@ enum Command: String {
     case starFive = "starFive"
     case library = "library"
     case develop = "develop"
+    case connected = "connected"
 }
