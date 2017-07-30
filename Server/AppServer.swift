@@ -181,6 +181,16 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
         send(string: cmdStr)
     }
     
+    /// Sends a range for either the temp/tint that should be reflected in the app's UI. LR has dynamic ranges for the tint and temp that changes based on the photo.
+    ///
+    /// - Parameters:
+    ///   - rangeFor: the type of range (TempRange or TintRange)
+    ///   - min: min value string
+    ///   - max: max value string
+    func send(rangeFor: String, min: String, max: String) {
+        let cmdStr = "\(rangeFor):\(min),\(max)"
+        send(string: cmdStr)
+    }
     
     /// Sends a string message from the server to the connected client iOS app in the correctly formatted fashion
     ///

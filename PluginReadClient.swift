@@ -91,10 +91,14 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
                 if(parts[0] == "ValueType") {
                     parts = parts[1].characters.split{$0 == ","}.map(String.init)
                     if(parts.count == 2) {
-                        self.handle(value: Float(parts[1])!, forValueType: ValueType(rawValue: parts[0])!)
+                        ClientServerManager.sharedInstance.appServer.send(value: Float(parts[1])!, forValueType: ValueType(rawValue: parts[0])!)
                     }
+                } else if(parts[0] == "TempRange" || parts[0] == "TintRange") {
+                    let rangeType = parts[0]
+                    parts = parts[1].characters.split{$0 == ","}.map(String.init)
+                    
+                    ClientServerManager.sharedInstance.appServer.send(rangeFor: rangeType, min: parts[0], max: parts[1])
                 }
-                
             }
         }
         
@@ -111,13 +115,4 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
         self.delegate?.readClientDidDisconnect()
     }
     
-    
-    /// Called when a new value is being received from the LR plugin this value is when one of the development parameters is changed and it must be passed onto the iOS app.
-    ///
-    /// - Parameters:
-    ///   - value: the value of the development parameter
-    ///   - valueType: the development parameter iteself
-    private func handle(value: Float, forValueType valueType: ValueType) {
-        ClientServerManager.sharedInstance.appServer.send(value: value, forValueType: valueType)
-    }
 }
