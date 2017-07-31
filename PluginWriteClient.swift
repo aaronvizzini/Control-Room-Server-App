@@ -119,6 +119,14 @@ class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
         send(string: cmdStr)
     }
     
+    /// Send a preset selection to the server
+    ///
+    /// - Parameter preset: the preset uuid to send
+    func send(preset: String) {
+        let presetStr = "Preset:\(preset)"
+        send(string: presetStr)
+    }
+    
     /// Sends a string message from the server to the LR plugin in the correctly formatted fashion
     ///
     /// - Parameter string: the string message to send

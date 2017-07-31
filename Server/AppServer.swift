@@ -128,7 +128,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                     if(parts[0] == "CMD"){
                         let cmd = Command(rawValue: parts[1])!
                     
-                        if (cmd != Command.library && cmd != Command.develop && cmd != Command.connected) {
+                        if (cmd != Command.library && cmd != Command.develop && cmd != Command.connected && cmd != Command.requestPresets) {
                             KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
                         } else {
                             ClientServerManager.sharedInstance.pluginWriteClient.send(command: cmd)
@@ -137,6 +137,10 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                         parts = parts[1].characters.split{$0 == ","}.map(String.init)
                         
                         ClientServerManager.sharedInstance.pluginWriteClient.send(value: parts[1], forValueType: parts[0])
+                    } else if(parts[0] == "Preset"){
+                        let preset = parts[1]
+                
+                        ClientServerManager.sharedInstance.pluginWriteClient.send(preset: preset)
                     }
                 }
                 
@@ -189,6 +193,17 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
     ///   - max: max value string
     func send(rangeFor: String, min: String, max: String) {
         let cmdStr = "\(rangeFor):\(min),\(max)"
+        send(string: cmdStr)
+    }
+    
+    /// Sends a development preset and its folder to the App.
+    ///
+    /// - Parameters:
+    ///   - presetFolder: the preset's folder
+    ///   - presetName: the preset's name
+    ///   - presetUuid: the preset's Uuid
+    func send(presetFolder: String, presetName: String, presetUuid: String) {
+        let cmdStr = "Preset:\(presetFolder),\(presetName),\(presetUuid)"
         send(string: cmdStr)
     }
     

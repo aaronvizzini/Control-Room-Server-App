@@ -97,7 +97,14 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
                     let rangeType = parts[0]
                     parts = parts[1].characters.split{$0 == ","}.map(String.init)
                     
-                    ClientServerManager.sharedInstance.appServer.send(rangeFor: rangeType, min: parts[0], max: parts[1])
+                    if(parts.count == 2) {
+                        ClientServerManager.sharedInstance.appServer.send(rangeFor: rangeType, min: parts[0], max: parts[1])
+                    }
+                } else if(parts[0] == "Preset") {
+                    parts = parts[1].characters.split{$0 == ","}.map(String.init)
+                    if(parts.count == 3) {
+                        ClientServerManager.sharedInstance.appServer.send(presetFolder: parts[0], presetName: parts[1], presetUuid: parts[2])
+                    }
                 }
             }
         }
@@ -114,5 +121,4 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
         print("Plugin Read Client did disconnect")
         self.delegate?.readClientDidDisconnect()
     }
-    
 }

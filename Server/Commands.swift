@@ -26,4 +26,5 @@ enum Command: String {
     case library = "library"
     case develop = "develop"
     case connected = "connected"
+    case requestPresets = "requestPresets"
 }
