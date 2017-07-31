@@ -177,7 +177,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
             }
             
             //@synchronized(connectedSockets)
-            // {
+            // { 
             connectedSockets.remove(at: connectedSockets.index(of: sock)!)
             // }
         }
