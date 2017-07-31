@@ -89,26 +89,6 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
                 print("Plugin Read Client did read: \(msg)")
                 
                 ClientServerManager.sharedInstance.appServer.send(string: msg)
-                
-                /*
-                if(parts[0] == "ValueType") {
-                    parts = parts[1].characters.split{$0 == ","}.map(String.init)
-                    if(parts.count == 2) {
-                        ClientServerManager.sharedInstance.appServer.send(value: Float(parts[1])!, forValueType: ValueType(rawValue: parts[0])!)
-                    }
-                } else if(parts[0] == "TempRange" || parts[0] == "TintRange") {
-                    let rangeType = parts[0]
-                    parts = parts[1].characters.split{$0 == ","}.map(String.init)
-                    
-                    if(parts.count == 2) {
-                        ClientServerManager.sharedInstance.appServer.send(rangeFor: rangeType, min: parts[0], max: parts[1])
-                    }
-                } else if(parts[0] == "Preset") {
-                    parts = parts[1].characters.split{$0 == ","}.map(String.init)
-                    if(parts.count == 3) {
-                        ClientServerManager.sharedInstance.appServer.send(presetFolder: parts[0], presetName: parts[1], presetUuid: parts[2])
-                    }
-                }*/
             }
         }
         

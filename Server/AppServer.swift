@@ -124,27 +124,6 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 
                 print("App server did read: \(msg)")
                 
-                /*
-                if(parts.count >= 2) {
-                    if(parts[0] == "CMD"){
-                        let cmd = Command(rawValue: parts[1])!
-                    
-                        if (cmd != Command.library && cmd != Command.develop && cmd != Command.connected && cmd != Command.requestPresets) {
-                            KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
-                        } else {
-                            ClientServerManager.sharedInstance.pluginWriteClient.send(command: cmd)
-                        }
-                    } else if(parts[0] == "ValueType") {
-                        parts = parts[1].characters.split{$0 == ","}.map(String.init)
-                        
-                        ClientServerManager.sharedInstance.pluginWriteClient.send(value: parts[1], forValueType: parts[0])
-                    } else if(parts[0] == "Preset"){
-                        let preset = parts[1]
-                
-                        ClientServerManager.sharedInstance.pluginWriteClient.send(preset: preset)
-                    }
-                }*/
-                
                 var sendMsg: Bool = true
                 
                 if(parts.count >= 2) {
@@ -203,39 +182,6 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
             // }
         }
     }
-    
-    /*
-    /// Function used as a helper function to send data from the server to the connected client iOS app
-    ///
-    /// - Parameters:
-    ///   - value: the value of the development parameter
-    ///   - valueType: the development parameter iteself
-    func send(value: Float, forValueType valueType: ValueType) {
-        let cmdStr = "ValueType:\(valueType),\(value)"
-        send(string: cmdStr)
-    }
-    
-    /// Sends a range for either the temp/tint that should be reflected in the app's UI. LR has dynamic ranges for the tint and temp that changes based on the photo.
-    ///
-    /// - Parameters:
-    ///   - rangeFor: the type of range (TempRange or TintRange)
-    ///   - min: min value string
-    ///   - max: max value string
-    func send(rangeFor: String, min: String, max: String) {
-        let cmdStr = "\(rangeFor):\(min),\(max)"
-        send(string: cmdStr)
-    }
-    
-    /// Sends a development preset and its folder to the App.
-    ///
-    /// - Parameters:
-    ///   - presetFolder: the preset's folder
-    ///   - presetName: the preset's name
-    ///   - presetUuid: the preset's Uuid
-    func send(presetFolder: String, presetName: String, presetUuid: String) {
-        let cmdStr = "Preset:\(presetFolder),\(presetName),\(presetUuid)"
-        send(string: cmdStr)
-    } */
     
     /// Sends a string message from the server to the connected client iOS app in the correctly formatted fashion
     ///

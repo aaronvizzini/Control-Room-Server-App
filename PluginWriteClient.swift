@@ -101,33 +101,6 @@ class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
         self.delegate?.writeClientDidDisconnect()
     }
     
-    /*
-    /// Sends a command message from the server to the  LRplugin in the correctly formatted fashion
-    ///
-    /// - Parameter string: the string message to send
-    func send(command: Command) {
-        let cmdStr = "CMD:\(command)"
-        send(string: cmdStr)
-    }
-    
-    /// Sends an updated value/value message from the server to the LRplugin in the correctly formatted fashion
-    ///
-    /// - Parameters:
-    ///   - value: the value of the development parameter
-    ///   - valueType: the development parameter iteself
-    func send(value: String, forValueType valueType: String) {
-        let cmdStr = "ValueType:\(valueType),\(value)"
-        send(string: cmdStr)
-    }
-    
-    /// Send a preset selection to the server
-    ///
-    /// - Parameter preset: the preset uuid to send
-    func send(preset: String) {
-        let presetStr = "Preset:\(preset)"
-        send(string: presetStr)
-    }*/
-    
     /// Sends a string message from the server to the LR plugin in the correctly formatted fashion
     ///
     /// - Parameter string: the string message to send
