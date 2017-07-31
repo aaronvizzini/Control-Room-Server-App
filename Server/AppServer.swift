@@ -124,6 +124,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 
                 print("App server did read: \(msg)")
                 
+                /*
                 if(parts.count >= 2) {
                     if(parts[0] == "CMD"){
                         let cmd = Command(rawValue: parts[1])!
@@ -142,6 +143,35 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 
                         ClientServerManager.sharedInstance.pluginWriteClient.send(preset: preset)
                     }
+                }*/
+                
+                var sendMsg: Bool = true
+                
+                if(parts.count >= 2) {
+                    if(parts[0] == "CMD"){
+                        let cmd = Command(rawValue: parts[1])!
+                        
+                        if (cmd == Command.addToRapid ||
+                            cmd == Command.backward ||
+                            cmd == Command.flagDelete ||
+                            cmd == Command.flagSave ||
+                            cmd == Command.forward ||
+                            cmd == Command.starFive ||
+                            cmd == Command.starFour ||
+                            cmd == Command.starThree ||
+                            cmd == Command.starTwo ||
+                            cmd == Command.starOne ||
+                            cmd == Command.starZero ||
+                            cmd == Command.unflag) {
+                    
+                            KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
+                            sendMsg = false
+                        }
+                    }
+                }
+                
+                if(sendMsg) {
+                    ClientServerManager.sharedInstance.pluginWriteClient.send(string: msg)
                 }
                 
                 sock.readData(to: GCDAsyncSocket.crlfData(), withTimeout: -1, tag: 0)
@@ -174,7 +204,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
         }
     }
     
-    
+    /*
     /// Function used as a helper function to send data from the server to the connected client iOS app
     ///
     /// - Parameters:
@@ -205,7 +235,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
     func send(presetFolder: String, presetName: String, presetUuid: String) {
         let cmdStr = "Preset:\(presetFolder),\(presetName),\(presetUuid)"
         send(string: cmdStr)
-    }
+    } */
     
     /// Sends a string message from the server to the connected client iOS app in the correctly formatted fashion
     ///

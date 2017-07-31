@@ -101,6 +101,7 @@ class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
         self.delegate?.writeClientDidDisconnect()
     }
     
+    /*
     /// Sends a command message from the server to the  LRplugin in the correctly formatted fashion
     ///
     /// - Parameter string: the string message to send
@@ -125,7 +126,7 @@ class PluginWriteClient: NSObject, GCDAsyncSocketDelegate {
     func send(preset: String) {
         let presetStr = "Preset:\(preset)"
         send(string: presetStr)
-    }
+    }*/
     
     /// Sends a string message from the server to the LR plugin in the correctly formatted fashion
     ///

@@ -84,10 +84,13 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
             autoreleasepool {
                 let strData: Data = data.subdata(in: 0..<data.count - 2)
                 let msg: String = String(data: strData, encoding: String.Encoding.utf8)!
-                var parts: [String] = msg.characters.split{$0 == ":"}.map(String.init)
+                //var parts: [String] = msg.characters.split{$0 == ":"}.map(String.init)
                 
                 print("Plugin Read Client did read: \(msg)")
                 
+                ClientServerManager.sharedInstance.appServer.send(string: msg)
+                
+                /*
                 if(parts[0] == "ValueType") {
                     parts = parts[1].characters.split{$0 == ","}.map(String.init)
                     if(parts.count == 2) {
@@ -105,7 +108,7 @@ class PluginReadClient: NSObject, GCDAsyncSocketDelegate {
                     if(parts.count == 3) {
                         ClientServerManager.sharedInstance.appServer.send(presetFolder: parts[0], presetName: parts[1], presetUuid: parts[2])
                     }
-                }
+                }*/
             }
         }
         
