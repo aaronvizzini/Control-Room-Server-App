@@ -27,7 +27,9 @@ class KeyboardCommandHandler: NSObject {
         var vKey:CGKeyCode?
         
         switch cmd {
-            
+         
+        case .toggleBW:
+            vKey = 0x09
         case .backward:
             vKey = 0x7B
         case .forward:

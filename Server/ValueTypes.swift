@@ -11,7 +11,6 @@ import Foundation
 /// An enaum for the possible Lightroom Development Values that could be modified by this app.
 enum ValueType: String {
     case starRating = "starRating"
-    case bwColor = "bwColor"
     
     //Adjust-Basic Panel
     case Temperature = "Temperature"
@@ -69,7 +68,7 @@ enum ValueType: String {
     case GrayMixerYellow = "GrayMixerYellow"
     case GrayMixerGreen = "GrayMixerGreen"
     case GrayMixerAqua = "GrayMixerAqua"
-    case GrayMixerBlue = "TempGrayMixerBlueerature"
+    case GrayMixerBlue = "GrayMixerBlue"
     case GrayMixerPurple = "GrayMixerPurple"
     case GrayMixerMagenta = "GrayMixerMagenta"
     

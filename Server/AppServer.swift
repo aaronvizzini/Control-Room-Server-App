@@ -130,7 +130,8 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                     if(parts[0] == "CMD"){
                         let cmd = Command(rawValue: parts[1])!
                         
-                        if (cmd == Command.addToRapid ||
+                        if (cmd == Command.toggleBW ||
+                            cmd == Command.addToRapid ||
                             cmd == Command.backward ||
                             cmd == Command.flagDelete ||
                             cmd == Command.flagSave ||
