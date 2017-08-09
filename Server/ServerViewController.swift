@@ -28,6 +28,8 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
         
         let version: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         versionLabel.stringValue = versionLabel.stringValue + " " + version
+        
+        startStopServer(self)
     }
     
     @IBAction func quitServerApp(_ sender: AnyObject) {
