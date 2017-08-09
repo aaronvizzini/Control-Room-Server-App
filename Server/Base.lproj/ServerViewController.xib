@@ -13,17 +13,18 @@
                 <outlet property="lightroomStatusLabel" destination="fmk-cx-KdB" id="8Fr-Qy-GFP"/>
                 <outlet property="startStopButton" destination="hQq-v2-CQx" id="2Jb-AL-Jn3"/>
                 <outlet property="statusLabel" destination="b9e-L7-BEN" id="j7n-Zg-wqI"/>
+                <outlet property="versionLabel" destination="8cc-3h-kvq" id="wUx-yJ-Xh0"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="235"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-jJ-HQg">
-                    <rect key="frame" x="0.0" y="185" width="393" height="30"/>
+                    <rect key="frame" x="0.0" y="200" width="393" height="30"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Control Room Server" drawsBackground="YES" id="YA5-zK-tIX">
                         <font key="font" size="20" name="Menlo-Bold"/>
                         <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
@@ -31,7 +32,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-yZ-qHx">
-                    <rect key="frame" x="18" y="151" width="131" height="23"/>
+                    <rect key="frame" x="18" y="149" width="131" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Server Status:" id="raF-41-ALY">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -39,7 +40,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIy-LG-Ge7">
-                    <rect key="frame" x="189" y="120" width="4" height="23"/>
+                    <rect key="frame" x="189" y="118" width="4" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="SWl-NH-YXI">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -47,7 +48,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBH-Ct-6cb">
-                    <rect key="frame" x="153" y="89" width="41" height="23"/>
+                    <rect key="frame" x="153" y="87" width="41" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="None" id="EzA-cj-fT7">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -55,7 +56,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaB-7W-ROY">
-                    <rect key="frame" x="18" y="120" width="167" height="23"/>
+                    <rect key="frame" x="18" y="118" width="167" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Server Running On:" id="jtP-mZ-QbW">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -63,7 +64,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGN-Sg-I0S">
-                    <rect key="frame" x="18" y="89" width="131" height="23"/>
+                    <rect key="frame" x="18" y="87" width="131" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="App Connected:" id="LLF-ON-kck">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -71,7 +72,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0L-yr-eb2">
-                    <rect key="frame" x="18" y="58" width="158" height="23"/>
+                    <rect key="frame" x="18" y="56" width="158" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Lightroom Status:" id="APj-Me-9nQ">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -99,7 +100,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9e-L7-BEN">
-                    <rect key="frame" x="153" y="151" width="32" height="23"/>
+                    <rect key="frame" x="153" y="149" width="32" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="OFF" id="ad8-WJ-Jdj">
                         <font key="font" size="15" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -107,9 +108,17 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmk-cx-KdB">
-                    <rect key="frame" x="180" y="58" width="32" height="23"/>
+                    <rect key="frame" x="180" y="56" width="32" height="23"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="OFF" id="GOU-6I-9dx">
                         <font key="font" size="15" name="Menlo-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cc-3h-kvq">
+                    <rect key="frame" x="-2" y="177" width="397" height="18"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version:" id="wrO-TB-yT8">
+                        <font key="font" size="12" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -118,16 +127,19 @@
             <constraints>
                 <constraint firstItem="FaB-7W-ROY" firstAttribute="top" secondItem="aAa-yZ-qHx" secondAttribute="bottom" constant="8" id="30M-fK-mml"/>
                 <constraint firstItem="fmk-cx-KdB" firstAttribute="centerY" secondItem="j0L-yr-eb2" secondAttribute="centerY" id="9M1-vo-cYQ"/>
+                <constraint firstItem="aAa-yZ-qHx" firstAttribute="top" secondItem="8cc-3h-kvq" secondAttribute="bottom" constant="5" id="9Qs-6Y-FDz"/>
+                <constraint firstAttribute="trailing" secondItem="8cc-3h-kvq" secondAttribute="trailing" id="9Sy-xg-H3B"/>
                 <constraint firstItem="GIy-LG-Ge7" firstAttribute="leading" secondItem="FaB-7W-ROY" secondAttribute="trailing" constant="8" id="BTo-eg-p1a"/>
                 <constraint firstItem="CZ9-jJ-HQg" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Eht-l2-JOA"/>
                 <constraint firstAttribute="trailing" secondItem="CZ9-jJ-HQg" secondAttribute="trailing" id="Hcc-2d-jrF"/>
                 <constraint firstItem="b9e-L7-BEN" firstAttribute="leading" secondItem="aAa-yZ-qHx" secondAttribute="trailing" constant="8" id="K30-dc-R8G"/>
                 <constraint firstItem="CZ9-jJ-HQg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="KlU-3c-y6W"/>
+                <constraint firstItem="8cc-3h-kvq" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="OCf-5q-b8Y"/>
+                <constraint firstItem="8cc-3h-kvq" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PPz-3E-ZXk"/>
                 <constraint firstItem="aAa-yZ-qHx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Qya-aw-NPE"/>
                 <constraint firstItem="Hj8-ng-uYJ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="RiZ-1y-FW7"/>
                 <constraint firstItem="fmk-cx-KdB" firstAttribute="leading" secondItem="j0L-yr-eb2" secondAttribute="trailing" constant="8" id="Thr-Fi-I55"/>
                 <constraint firstItem="j0L-yr-eb2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="UFh-tA-EPQ"/>
-                <constraint firstItem="aAa-yZ-qHx" firstAttribute="top" secondItem="CZ9-jJ-HQg" secondAttribute="bottom" constant="11" id="bfw-14-BYi"/>
                 <constraint firstAttribute="bottom" secondItem="Hj8-ng-uYJ" secondAttribute="bottom" constant="20" id="cwr-xv-xgI"/>
                 <constraint firstItem="BBH-Ct-6cb" firstAttribute="centerY" secondItem="VGN-Sg-I0S" secondAttribute="centerY" id="dQ9-A2-cY9"/>
                 <constraint firstItem="GIy-LG-Ge7" firstAttribute="centerY" secondItem="FaB-7W-ROY" secondAttribute="centerY" id="gt2-F3-ydb"/>
@@ -139,9 +151,10 @@
                 <constraint firstItem="FaB-7W-ROY" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="r1A-rG-Qd0"/>
                 <constraint firstItem="b9e-L7-BEN" firstAttribute="centerY" secondItem="aAa-yZ-qHx" secondAttribute="centerY" id="rP8-lu-Ize"/>
                 <constraint firstAttribute="trailing" secondItem="hQq-v2-CQx" secondAttribute="trailing" constant="20" id="t7G-Wi-tcy"/>
+                <constraint firstItem="8cc-3h-kvq" firstAttribute="top" secondItem="CZ9-jJ-HQg" secondAttribute="bottom" constant="5" id="uI9-iv-YyS"/>
                 <constraint firstItem="VGN-Sg-I0S" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="vp1-mM-K9P"/>
             </constraints>
-            <point key="canvasLocation" x="101.5" y="167.5"/>
+            <point key="canvasLocation" x="101.5" y="175"/>
         </customView>
     </objects>
 </document>

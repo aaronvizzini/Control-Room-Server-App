@@ -15,6 +15,7 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
     @IBOutlet weak var appConnectedLabel: NSTextField!
     @IBOutlet weak var lightroomStatusLabel: NSTextField!
     @IBOutlet weak var startStopButton: NSButton!
+    @IBOutlet weak var versionLabel: NSTextField!
     
     private var pluginReadClientConnected = false
     private var pluginWriteClientConnected = false
@@ -24,6 +25,9 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
         ClientServerManager.sharedInstance.appServer.delegate = self
         ClientServerManager.sharedInstance.pluginWriteClient.delegate = self
         ClientServerManager.sharedInstance.pluginReadClient.delegate = self
+        
+        let version: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        versionLabel.stringValue = versionLabel.stringValue + " " + version
     }
     
     @IBAction func quitServerApp(_ sender: AnyObject) {

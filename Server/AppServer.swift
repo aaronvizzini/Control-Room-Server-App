@@ -155,7 +155,6 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 }
                 
                 sock.readData(to: GCDAsyncSocket.crlfData(), withTimeout: -1, tag: 0)
-                print(msg)
             }
         }
         
@@ -192,7 +191,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
             let formattedString = "\(string)\r\n"
             let data = formattedString.data(using: String.Encoding.utf8)
             
-            print("Sending: \(formattedString)")
+            print("App Server Sending: \(formattedString)")
 
             self.connectedSockets[0].write(data!, withTimeout: 20.0, tag: 1)
         }
