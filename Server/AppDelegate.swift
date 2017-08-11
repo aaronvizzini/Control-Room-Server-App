@@ -36,6 +36,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let _ = popover.contentViewController?.view
 
         eventMonitor?.start()
+        
+        //A timer which calls a function checking if Lightroom is running
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
+            timer in
+            self.checkForLightroom(timer: timer)
+        }
+    }
+    
+    /// A timer will call this function. This function launches a background async utility task that checks to see if Lightroom is running, if Lightroom is not running the app closes. 
+    ///
+    /// - Parameter timer: the timer
+    func checkForLightroom(timer:Timer) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
+            repeat {
+                let runningApps:[NSRunningApplication] = NSWorkspace.shared().runningApplications
+                
+                var lightroomOpen = false
+                for app in runningApps {
+                    if let identifier = app.bundleIdentifier {
+                        if(identifier.contains("com.adobe.Lightroom")) {
+                            lightroomOpen = true
+                            break
+                        }
+                    }
+                }
+                
+                if(!lightroomOpen) {
+                    ClientServerManager.sharedInstance.appServer.stop()
+                    NSApplication.shared().terminate(self)
+                }
+            } while (true)
+        }
     }
 
     
