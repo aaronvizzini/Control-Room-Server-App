@@ -20,11 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     ///
     /// - Parameter aNotification: the notification
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if let button = statusItem.button {
-            button.image = NSImage(named: "MenuBarIcon")
-            button.imageScaling = NSImageScaling.scaleProportionallyUpOrDown
-            button.action = #selector(self.togglePopover(sender:))
-        }
+        let button:NSStatusBarButton = statusItem.button!
+        button.image = NSImage(named: "MenuBarIcon")
+        button.imageScaling = NSImageScaling.scaleProportionallyUpOrDown
+        button.action = #selector(self.togglePopover(sender:))
         
         popover.contentViewController = ServerViewController(nibName: "ServerViewController", bundle: nil)
         
@@ -33,6 +32,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.closePopover(sender: event)
             }
         }
+        
+        let _ = popover.contentViewController?.view
+
         eventMonitor?.start()
     }
 
