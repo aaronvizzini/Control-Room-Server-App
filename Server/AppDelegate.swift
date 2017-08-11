@@ -49,24 +49,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter timer: the timer
     func checkForLightroom(timer:Timer) {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
-            repeat {
-                let runningApps:[NSRunningApplication] = NSWorkspace.shared().runningApplications
+            let runningApps:[NSRunningApplication] = NSWorkspace.shared().runningApplications
                 
-                var lightroomOpen = false
-                for app in runningApps {
-                    if let identifier = app.bundleIdentifier {
-                        if(identifier.contains("com.adobe.Lightroom")) {
-                            lightroomOpen = true
-                            break
-                        }
+            var lightroomOpen = false
+            for app in runningApps {
+                if let identifier = app.bundleIdentifier {
+                    if(identifier.contains("com.adobe.Lightroom")) {
+                        lightroomOpen = true
+                        break
                     }
                 }
+            }
                 
-                if(!lightroomOpen) {
-                    ClientServerManager.sharedInstance.appServer.stop()
-                    NSApplication.shared().terminate(self)
-                }
-            } while (true)
+            if(!lightroomOpen) {
+                ClientServerManager.sharedInstance.appServer.stop()
+                NSApplication.shared().terminate(self)
+            }
         }
     }
 
