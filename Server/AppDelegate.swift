@@ -110,6 +110,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             showPopover(sender: sender)
         }
     }
-
+    
+    
+    /// Technically we need to let the application accept opening with a file. The application does not do anything with the file other than accept it.
+    /// This is done to allow the plugin in LR to open the application automatically. The LR SDK can only open a program if it is passing a file, thus we need this.
+    ///
+    /// - Parameters:
+    ///   - sender: sender
+    ///   - filename: filename
+    /// - Returns: always returns true
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        return true
+    }
 }
 
