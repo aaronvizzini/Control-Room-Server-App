@@ -128,24 +128,24 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                 
                 if(parts.count >= 2) {
                     if(parts[0] == "CMD"){
-                        let cmd = Command(rawValue: parts[1])!
-                        
-                        if (cmd == Command.toggleBW ||
-                            cmd == Command.addToRapid ||
-                            cmd == Command.backward ||
-                            cmd == Command.flagDelete ||
-                            cmd == Command.flagSave ||
-                            cmd == Command.forward ||
-                            cmd == Command.starFive ||
-                            cmd == Command.starFour ||
-                            cmd == Command.starThree ||
-                            cmd == Command.starTwo ||
-                            cmd == Command.starOne ||
-                            cmd == Command.starZero ||
-                            cmd == Command.unflag) {
+                        if let cmd = Command(rawValue: parts[1]) {
+                            if (cmd == Command.toggleBW ||
+                                cmd == Command.addToRapid ||
+                                cmd == Command.backward ||
+                                cmd == Command.flagDelete ||
+                                cmd == Command.flagSave ||
+                                cmd == Command.forward ||
+                                cmd == Command.starFive ||
+                                cmd == Command.starFour ||
+                                cmd == Command.starThree ||
+                                cmd == Command.starTwo ||
+                                cmd == Command.starOne ||
+                                cmd == Command.starZero ||
+                                cmd == Command.unflag) {
                     
-                            KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
-                            sendMsg = false
+                                KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
+                                sendMsg = false
+                            }
                         }
                     }
                 }

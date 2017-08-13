@@ -20,7 +20,6 @@
 		64C7106C1F19CBE200D4B85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C7106A1F19CBE200D4B85D /* Main.storyboard */; };
 		64C710721F1ADE9D00D4B85D /* AppServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C710711F1ADE9D00D4B85D /* AppServer.swift */; };
 		64C710761F1AE21900D4B85D /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C710741F1AE21900D4B85D /* Commands.swift */; };
-		64C710771F1AE21900D4B85D /* ValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C710751F1AE21900D4B85D /* ValueTypes.swift */; };
 		64C710791F1AE98F00D4B85D /* KeyboardCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C710781F1AE98F00D4B85D /* KeyboardCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +44,6 @@
 		64C7106B1F19CBE200D4B85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64C710711F1ADE9D00D4B85D /* AppServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppServer.swift; sourceTree = "<group>"; };
 		64C710741F1AE21900D4B85D /* Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
-		64C710751F1AE21900D4B85D /* ValueTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTypes.swift; sourceTree = "<group>"; };
 		64C710781F1AE98F00D4B85D /* KeyboardCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardCommandHandler.swift; sourceTree = "<group>"; };
 		91E3B479BA4FD6BB5CF572B5 /* Pods-Server.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Server.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Server/Pods-Server.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B3BC43285D620C64A41650 /* Pods_Server.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Server.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +94,6 @@
 			children = (
 				64C710781F1AE98F00D4B85D /* KeyboardCommandHandler.swift */,
 				64C710741F1AE21900D4B85D /* Commands.swift */,
-				64C710751F1AE21900D4B85D /* ValueTypes.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 			files = (
 				64C710691F199F2D00D4B85D /* EventMonitor.swift in Sources */,
 				6465FFD71F2145100042B047 /* PluginReadClient.swift in Sources */,
-				64C710771F1AE21900D4B85D /* ValueTypes.swift in Sources */,
 				64C710791F1AE98F00D4B85D /* KeyboardCommandHandler.swift in Sources */,
 				64C710651F1987E600D4B85D /* ServerViewController.swift in Sources */,
 				6465FFD51F21433C0042B047 /* ClientServerManager.swift in Sources */,
