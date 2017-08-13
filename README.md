@@ -19,4 +19,3 @@ Control Room brings some of Adobe Lightroom’s development and library manageme
 ###### Requirements:
 * macOS Sierra
 * Adobe Lightroom 6+ or CC
-* iOS 9+
