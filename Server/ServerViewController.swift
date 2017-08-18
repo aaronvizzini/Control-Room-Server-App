@@ -103,7 +103,7 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
     
     /// App server delegate method called when the socket did disconnect. Updates the UI accordingly.
     func serverSocketDidDisconnect() {
-        self.appConnectedLabel.stringValue = NSLocalizedString("None", comment: "")
+        self.appConnectedLabel.stringValue = NSLocalizedString("", comment: "")
     }
     
     /// Write client delegate method called when the client connects with the LR plugin

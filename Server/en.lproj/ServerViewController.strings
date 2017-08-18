@@ -6,13 +6,13 @@
 "APj-Me-9nQ.title" = "Lightroom Status:";
 
 /* Class = "NSTextFieldCell"; title = "None"; ObjectID = "EzA-cj-fT7"; */
-"EzA-cj-fT7.title" = "None";
+"EzA-cj-fT7.title" = "";
 
 /* Class = "NSTextFieldCell"; title = "OFF"; ObjectID = "GOU-6I-9dx"; */
 "GOU-6I-9dx.title" = "OFF";
 
 /* Class = "NSTextFieldCell"; title = "App Connected:"; ObjectID = "LLF-ON-kck"; */
-"LLF-ON-kck.title" = "App Connected:";
+"LLF-ON-kck.title" = "App Connected On:";
 
 /* Class = "NSTextFieldCell"; title = "Control Room Server"; ObjectID = "YA5-zK-tIX"; */
 "YA5-zK-tIX.title" = "Control Room Server";
