@@ -423,6 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aaronvizzini.Control-Room-Server";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Vizzini/Dropbox/Personal Files/Control Room/Server/Mac/Server/Server/Server-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -438,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aaronvizzini.Control-Room-Server";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Vizzini/Dropbox/Personal Files/Control Room/Server/Mac/Server/Server/Server-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
