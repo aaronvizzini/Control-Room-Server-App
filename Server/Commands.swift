@@ -12,22 +12,5 @@ import Foundation
 /// An enum of the possible commands that relate to the possible keyboard commands that can be triggered. This relates to Lightroom shortcuts, principally for the library. 
 enum Command: String {
     case toggleBW = "toggleBW"
-    case forward = "forward"
-    case backward = "backward"
-    case flagSave = "flagSave"
-    case flagDelete = "flagDelete"
-    case unflag = "unflag"
     case addToRapid = "addToRapid"
-    case starZero = "starZero"
-    case starOne = "starOne"
-    case starTwo = "starTwo"
-    case starThree = "starThree"
-    case starFour = "starFour"
-    case starFive = "starFive"
-    //case library = "library"
-   // case develop = "develop"
-    //case sendAllSettings = "sendAllSettings"
-    //case requestPresets = "requestPresets"
-    //case undo = "undo"
-   // case redo = "redo"
 }

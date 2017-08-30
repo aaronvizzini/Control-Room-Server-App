@@ -130,18 +130,7 @@ class AppServer: NSObject, GCDAsyncSocketDelegate {
                     if(parts[0] == "CMD"){
                         if let cmd = Command(rawValue: parts[1]) {
                             if (cmd == Command.toggleBW ||
-                                cmd == Command.addToRapid ||
-                                cmd == Command.backward ||
-                                cmd == Command.flagDelete ||
-                                cmd == Command.flagSave ||
-                                cmd == Command.forward ||
-                                cmd == Command.starFive ||
-                                cmd == Command.starFour ||
-                                cmd == Command.starThree ||
-                                cmd == Command.starTwo ||
-                                cmd == Command.starOne ||
-                                cmd == Command.starZero ||
-                                cmd == Command.unflag) {
+                                cmd == Command.addToRapid) {
                     
                                 KeyboardCommandHandler.sharedInstance.handleKeyboardCommand(cmd: cmd)
                                 sendMsg = false

@@ -30,30 +30,8 @@ class KeyboardCommandHandler: NSObject {
          
         case .toggleBW:
             vKey = 0x09
-        case .backward:
-            vKey = 0x7B
-        case .forward:
-            vKey = 0x7C
-        case .starZero:
-            vKey = 0x1D
-        case .starOne:
-            vKey = 0x12
-        case .starTwo:
-            vKey = 0x13
-        case .starThree:
-            vKey = 0x14
-        case .starFour:
-            vKey = 0x15
-        case .starFive:
-            vKey = 0x17
         case .addToRapid:
             vKey = 0x0B
-        case .flagSave:
-            vKey = 0x23
-        case .flagDelete:
-            vKey = 0x07
-        case .unflag:
-            vKey = 0x20
         }
         
         let src = CGEventSource(stateID: CGEventSourceStateID.hidSystemState)
