@@ -13,6 +13,7 @@
 		6465FFD51F21433C0042B047 /* ClientServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6465FFD41F21433B0042B047 /* ClientServerManager.swift */; };
 		6465FFD71F2145100042B047 /* PluginReadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6465FFD61F2145100042B047 /* PluginReadClient.swift */; };
 		6465FFD91F21451B0042B047 /* PluginWriteClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6465FFD81F21451B0042B047 /* PluginWriteClient.swift */; };
+		64AAD0511F6B0EC400D50A2C /* SleepModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAD0501F6B0EC400D50A2C /* SleepModeManager.swift */; };
 		64C710551F19839F00D4B85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C710541F19839F00D4B85D /* AppDelegate.swift */; };
 		64C710591F19839F00D4B85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C710581F19839F00D4B85D /* Assets.xcassets */; };
 		64C710651F1987E600D4B85D /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C710631F1987E600D4B85D /* ServerViewController.swift */; };
@@ -34,6 +35,7 @@
 		6465FFD41F21433B0042B047 /* ClientServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerManager.swift; sourceTree = "<group>"; };
 		6465FFD61F2145100042B047 /* PluginReadClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PluginReadClient.swift; path = ../PluginReadClient.swift; sourceTree = "<group>"; };
 		6465FFD81F21451B0042B047 /* PluginWriteClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PluginWriteClient.swift; path = ../PluginWriteClient.swift; sourceTree = "<group>"; };
+		64AAD0501F6B0EC400D50A2C /* SleepModeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepModeManager.swift; sourceTree = "<group>"; };
 		64C710511F19839F00D4B85D /* Control Room Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control Room Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C710541F19839F00D4B85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64C710581F19839F00D4B85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				64C710781F1AE98F00D4B85D /* KeyboardCommandHandler.swift */,
 				64C710741F1AE21900D4B85D /* Commands.swift */,
+				64AAD0501F6B0EC400D50A2C /* SleepModeManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				64C710691F199F2D00D4B85D /* EventMonitor.swift in Sources */,
 				6465FFD71F2145100042B047 /* PluginReadClient.swift in Sources */,
+				64AAD0511F6B0EC400D50A2C /* SleepModeManager.swift in Sources */,
 				64C710791F1AE98F00D4B85D /* KeyboardCommandHandler.swift in Sources */,
 				64C710651F1987E600D4B85D /* ServerViewController.swift in Sources */,
 				6465FFD51F21433C0042B047 /* ClientServerManager.swift in Sources */,

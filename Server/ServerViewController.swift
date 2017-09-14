@@ -98,11 +98,13 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
     ///
     /// - Parameter host: the host
     func serverDidAcceptNewSocketAt(host: String) {
+        SleepModeManager.preventSleep()
         self.appConnectedLabel.stringValue = host
     }
     
     /// App server delegate method called when the socket did disconnect. Updates the UI accordingly.
     func serverSocketDidDisconnect() {
+        SleepModeManager.allowSleep()
         self.appConnectedLabel.stringValue = NSLocalizedString("", comment: "")
     }
     
@@ -129,7 +131,6 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
 
         if(pluginReadClientConnected && pluginReadClientConnected) {
             self.lightroomStatusLabel.stringValue = NSLocalizedString("ON", comment: "")
-            print("readClientDidConnect")
         } else {
             self.lightroomStatusLabel.stringValue = NSLocalizedString("OFF", comment: "")
         }

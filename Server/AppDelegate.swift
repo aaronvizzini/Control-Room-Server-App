@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     
-    
     /// Application did finish launching. Add the menu bar button and popover with its view controller. Also, start the event monitor which will handle the hiding of the popover when the user clicks outside of it.
     ///
     /// - Parameter aNotification: the notification
@@ -62,17 +61,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
                 
             if(!lightroomOpen) {
-                ClientServerManager.sharedInstance.appServer.stop()
-                NSApplication.shared().terminate(self)
+               ClientServerManager.sharedInstance.appServer.stop()
+               NSApplication.shared().terminate(self)
             }
         }
     }
-
     
     /// Application will terminate, disconnect the servers and clients
     ///
     /// - Parameter aNotification: the notification
     func applicationWillTerminate(_ aNotification: Notification) {
+        SleepModeManager.allowSleep()
         ClientServerManager.sharedInstance.appServer.stop()
         ClientServerManager.sharedInstance.pluginReadClient.disconnect()
         ClientServerManager.sharedInstance.pluginWriteClient.disconnect()

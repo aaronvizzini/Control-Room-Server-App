@@ -34,9 +34,9 @@ class KeyboardCommandHandler: NSObject {
             vKey = 0x0B
         }
         
-        let src = CGEventSource(stateID: CGEventSourceStateID.hidSystemState)
-        
         if (vKey != nil) {
+            let src = CGEventSource(stateID: CGEventSourceStateID.hidSystemState)
+
             let cmdd = CGEvent(keyboardEventSource: src, virtualKey: vKey!, keyDown: true)
             let cmdu = CGEvent(keyboardEventSource: src, virtualKey: vKey!, keyDown: false)
             
