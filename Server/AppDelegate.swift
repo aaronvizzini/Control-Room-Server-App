@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusItem = NSStatusBar.system().statusItem(withLength: -2)
+    let statusItem = NSStatusBar.system.statusItem(withLength: -2)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     
@@ -20,13 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter aNotification: the notification
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let button:NSStatusBarButton = statusItem.button!
-        button.image = NSImage(named: "MenuBarIcon")
+        button.image = NSImage(named: NSImage.Name(rawValue: "MenuBarIcon"))
         button.imageScaling = NSImageScaling.scaleProportionallyUpOrDown
         button.action = #selector(self.togglePopover(sender:))
         
-        popover.contentViewController = ServerViewController(nibName: "ServerViewController", bundle: nil)
+        popover.contentViewController = ServerViewController(nibName: NSNib.Name(rawValue: "ServerViewController"), bundle: nil)
         
-        eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [unowned self] event in
+        eventMonitor = EventMonitor(mask: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { [unowned self] event in
             if self.popover.isShown {
                 self.closePopover(sender: event)
             }
@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// - Parameter timer: the timer
     func checkForLightroom(timer:Timer) {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
-            let runningApps:[NSRunningApplication] = NSWorkspace.shared().runningApplications
+            let runningApps:[NSRunningApplication] = NSWorkspace.shared.runningApplications
                 
             var lightroomOpen = false
             for app in runningApps {
@@ -62,7 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 
             if(!lightroomOpen) {
                ClientServerManager.sharedInstance.appServer.stop()
-               NSApplication.shared().terminate(self)
+               NSApplication.shared.terminate(self)
             }
         }
     }
@@ -102,7 +102,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// Toggle the popover, closing or opening it
     ///
     /// - Parameter sender: the sender
-    func togglePopover(sender: AnyObject?) {
+    @objc func togglePopover(sender: AnyObject?) {
         if popover.isShown {
             closePopover(sender: sender)
         } else {

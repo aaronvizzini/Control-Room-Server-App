@@ -34,7 +34,7 @@ class ServerViewController: NSViewController, AppServerDelegate, PluginReadClien
     
     @IBAction func quitServerApp(_ sender: AnyObject) {
         ClientServerManager.sharedInstance.appServer.stop()
-        NSApplication.shared().terminate(self)
+        NSApplication.shared.terminate(self)
     }
     
     @IBAction func startStopServer(_ sender: AnyObject) {
